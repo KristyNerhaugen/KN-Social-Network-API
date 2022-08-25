@@ -1,0 +1,19 @@
+{
+  "name": "kn-social-network-api",
+  "version": "1.0.0",
+  "description": "An API for a social network that uses a NoSQL database.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KristyNerhaugen/KN-Social-Network-API.git"
+  },
+  "author": "Kristy Nerhaugen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  }
+}
