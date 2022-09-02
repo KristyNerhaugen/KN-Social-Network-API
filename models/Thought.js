@@ -1,6 +1,6 @@
 const { Schema, model, Types } = require("mongoose");
-// TO DO! require date format file
-// const dateFormat = require('../utils/dateFormat');
+//  require date format file
+const dateFormat = require("../utils/dateFormat");
 
 // reaction schema subdocument schema
 const ReactionSchema = new Schema(
