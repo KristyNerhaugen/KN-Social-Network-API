@@ -21,18 +21,18 @@ const UserSchema = new Schema(
       //   "Please fill a valid email address",
       // ],
     },
-    // thoughts: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Thought",
-    //   },
-    // ],
-    // friends: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     re: "User",
-    //   },
-    // ],
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        re: "User",
+      },
+    ],
   },
   {
     toJSON: {
