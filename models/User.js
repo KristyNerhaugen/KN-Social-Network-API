@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
-// require date format file
+
+// TO DO! require date format file
 
 const UserSchema = new Schema({
   username: {
@@ -12,18 +13,22 @@ const UserSchema = new Schema({
     type: String,
     unique: true,
     required: true,
-    // must match to a valid email address--Mongoose's matching validation
+    // must match to a valid email address--used https://mongoosejs.com/docs/api.html#schema_Schema-indexes
+    email: { type: String, set: toLower, required: true, unique: true },
+    // if above doesn't work, try this code taken from from https://thewebdev.info/2022/03/16/how-to-validate-email-syntax-with-mongoose/
+    // validate: [validateEmail, "Please fill a valid email address"],
+    // match: [
+    //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    //   "Please fill a valid email address",
+    // ],
   },
-  //thoughts: {},
-  //friends: {},
+  //thoughts: [{}],
+  //friends: [{}],
 });
 
 // virtual friendCount retrieves the length of the user's friends array
 UserSchema.virtual("friendCount").get(function () {
-  return this.friends.reduce(
-    (total, friend) => total + friend.replies.length + 1,
-    0
-  );
+  return this.friends.length;
 });
 
 // create the  model using the UserSchema
