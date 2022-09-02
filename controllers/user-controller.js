@@ -60,6 +60,7 @@ const userController = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));
   },
+  //TO DO: BONUS: Remove a user's associated thoughts when deleted.
 };
 
 module.exports = userController;
