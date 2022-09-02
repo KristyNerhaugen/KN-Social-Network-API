@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// TO DO! require date format file
-
 const UserSchema = new Schema(
   {
     username: {
