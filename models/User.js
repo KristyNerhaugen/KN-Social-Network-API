@@ -13,13 +13,13 @@ const UserSchema = new Schema(
       unique: true,
       required: true,
       // must match to a valid email address--used https://mongoosejs.com/docs/api.html#schema_Schema-indexes
-      email: { type: String, required: true, unique: true },
+      // email: { type: String, required: true, unique: true },
       // if above doesn't work, try this code taken from from https://thewebdev.info/2022/03/16/how-to-validate-email-syntax-with-mongoose/
       // validate: [validateEmail, "Please fill a valid email address"],
-      // match: [
-      //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      //   "Please fill a valid email address",
-      // ],
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        "Please fill a valid email address",
+      ],
     },
     thoughts: [
       {
@@ -30,7 +30,7 @@ const UserSchema = new Schema(
     friends: [
       {
         type: Schema.Types.ObjectId,
-        re: "User",
+        ref: "User",
       },
     ],
   },

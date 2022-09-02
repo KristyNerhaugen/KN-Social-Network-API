@@ -60,6 +60,32 @@ const userController = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));
   },
+
+  createFriend({ params }, res) {
+    User.findOneAndUpdate(
+      { _id: params.id },
+      { $push: { friends: params.friendId } },
+      { new: true, runValidators: true }
+    )
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          res.status(404).json({ message: "No user was found with this id" });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch((err) => res.json(err));
+  },
+
+  deleteFriend({ params }, res) {
+    User.findOneAndUpdate(
+      { _id: params.id },
+      { $pull: { friends: params.friendId } },
+      { new: true }
+    )
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => res.json(err));
+  },
   //TO DO: BONUS: Remove a user's associated thoughts when deleted.
 };
 
