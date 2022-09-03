@@ -85,34 +85,34 @@ const thoughtController = {
   // remove/delete a thought by ID
   removeThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.id })
-      .then((deletedThought) => {
-        console.log(deletedThought);
-        // if (!deletedThought) {
-        //   return res
-        //     .status(404)
-        //     .json({ message: "No thought was found with this id." });
-        // }
-        return User.findOneAndUpdate(
-          { thoughts: params.thoughtId },
-          { $pull: { thoughts: params.thoughtId } },
-          { new: true }
-        );
-      })
-      .then((dbUserData) => {
-        if (!dbUserData) {
+      // .then((deletedThought) => {
+      //   console.log(deletedThought);
+      //   if (!deletedThought) {
+      //      return res
+      //       .status(404)
+      //        .json({ message: "No thought was found with this id." });
+      //    }
+      //   return User.findOneAndUpdate(
+      //     { thoughts: params.thoughtId },
+      //     { $pull: { thoughts: params.thoughtId } },
+      //     { new: true }
+      //   );
+      // })
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
           res
             .status(404)
             .json({ message: "No thought was found with this id." });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
   // remove a reaction
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.thoughtId },
+      { _id: params.id },
       { $pull: { reactions: { reactionId: params.reactionId } } },
       { new: true }
     )
