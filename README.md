@@ -24,7 +24,7 @@
 
 ### This video shows the functionality of the application:
 
-### [Video Tutorial]()
+### [Video Tutorial](https://drive.google.com/file/d/1MKABjL9Sl8YnZSXvJf8IumjK8vpPYt_w/view?usp=sharing)
 
 ## Credits
 
