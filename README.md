@@ -2,7 +2,7 @@
 
 ## Description
 
-### For this challenge,
+### For this challenge, I created an API for a social network web application. Users can share thoughts, reactions to friends' thoughts, and create a friend list. This backend API uses Express.js, a MongoDB database, and the Mongoose ODM. This API uses a NoSQL database, MongoDB, so that when used with a front end it can handle large amounts of unstructured data.
 
 ## Table of Contents
 
@@ -16,11 +16,11 @@
 
 ## Installation
 
-### Access the code via GitHub. Fork, clone, or download the code. This application only works using
+### Access the code via GitHub. Fork, clone, or download the code. This application only works using Express.js, MongoDB, and Mongoose ODM. Be sure to install all required packages by doing "npm init -y" and "npm install" before trying to run the application.
 
 ## Usage
 
-### This application can be used
+### This application is an API that can be used by connecting it to a front end application. Users of this application can share thoughts, reactions to friends' thoughts, and create a friend list. This application can also be used by starting the server and testing the routes in Insomnia. Please see the walk-through video tutorial, found below, for a demonstration.
 
 ### This video shows the functionality of the application:
 
@@ -28,7 +28,7 @@
 
 ## Credits
 
-### I used what I learned in the BootCamp Spot modules and BootCamp classes to create this application. I especially used what I learned in Module 18 and the code that was given through Module 18 as a guide for this challenge.
+### I used what I learned in the BootCamp Spot modules and BootCamp classes to create this application. I especially used what I learned in Module 18 and the code that was given through Module 18 as a guide for this challenge. Code for the dateFormat.js file in the utils folder is copied directly from the Module 18 starter code, provided in BootCamp Spot Module Lesson 18.1.3. I also used these sources to figure out how to validate an email with Mongoose: https://thewebdev.info/2022/03/16/how-to-validate-email-syntax-with-mongoose/ and https://mongoosejs.com/docs/validation.html. My tutor, Rebecca Burke, assisted me with troubleshooting a few routes that weren't working.
 
 ## License
 
